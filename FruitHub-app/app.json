@@ -1,0 +1,45 @@
+{
+	"expo": {
+		"name": "Fruit Hub",
+		"slug": "fruitHub",
+		"version": "1.0.0",
+		"owner": "Gabriel Larocca",
+		"orientation": "portrait",
+		"icon": "./assets/icon.png",
+		"splash": {
+			"image": "./assets/splash.png",
+			"resizeMode": "cover",
+			"backgroundColor": "#FFF"
+		},
+		"updates": {
+			"enabled": true,
+			"fallbackToCacheTimeout": 30
+		},
+		"assetBundlePatterns": [
+			"**/*"
+		],
+		"androidStatusBar": {
+			"backgroundColor": "#FFF",
+			"translucent": false,
+			"barStyle": "light-content"
+		},
+		"ios": {
+			"bundleIdentifier": "br.com.fruithub",
+			"buildNumber": "1",
+			"supportsTablet": true,
+			"infoPlist": {
+				"NSCameraUsageDescription": "Utilizamos essa funcionalidade para que você possa atualizar sua foto de perfil.",
+				"NSPhotoLibraryAddUsageDescription": "Utilizamos essa funcionalidade para que você possa atualizar sua foto de perfil.",
+				"NSPhotoLibraryUsageDescription": "Utilizamos essa funcionalidade para que você possa atualizar sua foto de perfil."
+			}
+		},
+		"android": {
+			"package": "br.com.fruithub",
+			"versionCode": 1,
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/adaptive-icon.png",
+				"backgroundColor": "#FFF"
+			}
+		}
+	}
+}
