@@ -9,7 +9,7 @@ Aplicativo de Delivery de comida.
 
 ## 📷 Galeria
 
-<img src="https://i.imgur.com/vrfTs5g.jpg" width="" height="" alt="imagens">
+<img src="https://i.imgur.com/vrfTs5g.jpg" width="300" height="" alt="imagens">
 
 ## 👨‍💻 Tecnologias utilizadas
 
