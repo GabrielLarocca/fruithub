@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'react-native-elements';
 import { TextInput } from 'react-native-paper';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import Header from '../../components/Header';
 import SelfiePicker from '../../components/SelfiePicker';
 import Icon from 'react-native-remix-icon';
 import { update, edit } from '../../store/ducks/user';
@@ -65,37 +64,33 @@ export default function EditarPerfil(props) {
 	}, [user]);
 
 	return (
-		<>
-			<Header arrowBack title="Editar perfil" />
+		<KeyboardAwareScrollView contentContainerStyle={{ flexGrow: 1 }} style={[Default.container, { paddingHorizontal: 20 }]}>
+			<View style={{ alignSelf: 'center', marginVertical: 56 }}>
+				<SelfiePicker photo={userPhoto} setPhoto={setUserPhoto}>
+					{user?.foto ?
+						<ImageBackground width={101} height={101} imageStyle={{ borderRadius: 100 }} style={{ width: 101, height: 101 }} source={userPhoto && { uri: userPhoto?.url }}>
+							<View style={{ borderRadius: 100, height: 101, width: 101, backgroundColor: 'rgba(0, 0, 0 , 0.6)', justifyContent: 'center' }}>
+								<Icon name={'camera-fill'} style={{ alignSelf: 'center' }} size={35} color={colors.white} />
+							</View>
+						</ImageBackground>
+						:
+						<ImageBackground width={101} height={101} imageStyle={{ borderRadius: 100 }} style={{ width: 101, height: 101 }} source={userPhoto && { uri: userPhoto?.url }}>
+							<View style={{ borderRadius: 100, height: 101, width: 101, backgroundColor: 'rgba(0, 0, 0 , 0.6)', justifyContent: 'center' }}>
+								<Icon name={'camera-fill'} style={{ alignSelf: 'center' }} size={35} color={colors.white} />
+							</View>
+						</ImageBackground>
 
-			<KeyboardAwareScrollView contentContainerStyle={{ flexGrow: 1 }} style={[Default.container, { paddingHorizontal: 20 }]}>
-				<View style={{ alignSelf: 'center', marginVertical: 56 }}>
-					<SelfiePicker photo={userPhoto} setPhoto={setUserPhoto}>
-						{user?.foto ?
-							<ImageBackground width={101} height={101} imageStyle={{ borderRadius: 100 }} style={{ width: 101, height: 101 }} source={userPhoto && { uri: userPhoto?.url }}>
-								<View style={{ borderRadius: 100, height: 101, width: 101, backgroundColor: 'rgba(0, 0, 0 , 0.6)', justifyContent: 'center' }}>
-									<Icon name={'camera-fill'} style={{ alignSelf: 'center' }} size={35} color={colors.white} />
-								</View>
-							</ImageBackground>
-							:
-							<ImageBackground width={101} height={101} imageStyle={{ borderRadius: 100 }} style={{ width: 101, height: 101 }} source={userPhoto && { uri: userPhoto?.url }}>
-								<View style={{ borderRadius: 100, height: 101, width: 101, backgroundColor: 'rgba(0, 0, 0 , 0.6)', justifyContent: 'center' }}>
-									<Icon name={'camera-fill'} style={{ alignSelf: 'center' }} size={35} color={colors.white} />
-								</View>
-							</ImageBackground>
+					}
+				</SelfiePicker>
+			</View>
 
-						}
-					</SelfiePicker>
-				</View>
+			<TextInput mode="flat" underlineColor="#F1F1F1" theme={inputTheme} style={StyleGuide.input} returnKeyType="next" onSubmitEditing={() => refSenha.current.focus()} blurOnSubmit={false} label="Nome" onChangeText={setNome} value={nome} autoCorrect={false} />
 
-				<TextInput mode="flat" underlineColor="#F1F1F1" theme={inputTheme} style={StyleGuide.input} returnKeyType="next" onSubmitEditing={() => refSenha.current.focus()} blurOnSubmit={false} label="Nome" onChangeText={setNome} value={nome} autoCorrect={false} />
+			<TextInput mode="flat" underlineColor="#F1F1F1" theme={inputTheme} style={[StyleGuide.input, { marginTop: 30 }]} ref={refSenha} blurOnSubmit={false} secureTextEntry returnKeyType="done" label="Senha" onChangeText={setPassword} value={password} onSubmitEditing={editarUsuario} />
 
-				<TextInput mode="flat" underlineColor="#F1F1F1" theme={inputTheme} style={[StyleGuide.input, { marginTop: 30 }]} ref={refSenha} blurOnSubmit={false} secureTextEntry returnKeyType="done" label="Senha" onChangeText={setPassword} value={password} onSubmitEditing={editarUsuario} />
-
-				<View style={{ flex: 1, justifyContent: 'flex-end', marginBottom: 40 }}>
-					<Button onPress={editarUsuario} containerStyle={buttonContainer.containerButton} disabled={loading} loading={loading} buttonStyle={buttonContainer.button} titleStyle={[StyleGuide.medium16, { color: colors.white }]} title="Salvar alterações" mode="contained" />
-				</View>
-			</KeyboardAwareScrollView>
-		</>
+			<View style={{ flex: 1, justifyContent: 'flex-end', marginBottom: 40 }}>
+				<Button onPress={editarUsuario} containerStyle={buttonContainer.containerButton} disabled={loading} loading={loading} buttonStyle={buttonContainer.button} titleStyle={[StyleGuide.medium16, { color: colors.white }]} title="Salvar alterações" mode="contained" />
+			</View>
+		</KeyboardAwareScrollView>
 	);
 }

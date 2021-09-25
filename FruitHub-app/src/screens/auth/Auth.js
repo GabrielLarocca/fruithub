@@ -10,7 +10,7 @@ import fruits1 from '../../../assets/fruits1.png'
 import StyleGuide, { buttonContainer, colors, Default, inputTheme } from '../../../assets/styles/StyleGuide';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-export default function Onboarding(props) {
+export default function Auth(props) {
 	const navigate = useNavigation();
 
 	const [step, setStep] = useState(0);

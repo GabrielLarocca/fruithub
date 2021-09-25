@@ -65,12 +65,11 @@ export default function Home(props) {
 
       <View style={{ paddingHorizontal: 24, marginTop: 40 }}>
         <Text style={[StyleGuide.medium18, { color: '#27214D' }]}>Recommended Combo</Text>
-
         <View style={{ height: 2, width: 56, backgroundColor: '#FFA451', marginTop: 6 }}></View>
 
         <View style={{ flexDirection: 'row', marginTop: 16 }}>
           {RECOMMENDED.map((item, index) => (
-            <View style={[index == 0 && { marginRight: 6 }, index == 1 && { marginLeft: 6 }, { flex: 1, borderRadius: 16, overflow: 'hidden', borderColor: '#f1f1f1', borderWidth: 0.5, backgroundColor: '#FFF', elevation: 2, padding: 16, }]}>
+            <TouchableOpacity onPress={() => navigation.navigate('Product')} style={[index == 0 && { marginRight: 6 }, index == 1 && { marginLeft: 6 }, { flex: 1, borderRadius: 16, overflow: 'hidden', borderColor: '#f1f1f1', borderWidth: 0.5, backgroundColor: '#FFF', elevation: 2, padding: 16, }]}>
               <Icon name="ri-heart-line" size={22} color={'#FFA451'} style={{ alignSelf: 'flex-end' }} />
 
               <View style={{ alignItems: 'center' }}>
@@ -86,7 +85,7 @@ export default function Home(props) {
                   <Text style={{ alignSelf: 'center', fontSize: 20, color: '#FFA451' }}>+</Text>
                 </TouchableOpacity>
               </View>
-            </View>
+            </TouchableOpacity>
           ))}
         </View>
       </View>

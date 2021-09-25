@@ -42,3 +42,12 @@ export const onlyNumber = text => {
 export const objIsEmpty = obj => {
 	return Object.keys(obj).length === 0 && obj.constructor === Object;
 };
+
+export const mask = (value, pattern) => {
+	let i = 0;
+	const v = value.toString();
+
+	// const masked = mask('40028922', '(##) #####-####');
+
+	return pattern.replace(/#/g, () => v[i++] || '');
+}

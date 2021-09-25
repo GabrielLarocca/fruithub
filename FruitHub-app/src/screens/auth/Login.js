@@ -43,25 +43,13 @@ export default function Login(props) {
 		<KeyboardAwareScrollView contentContainerStyle={{ flexGrow: 1 }} style={[Default.container, { paddingHorizontal: 20, paddingTop: 28 }]}>
 			<Image width={100} height={35} source={logo} style={{ alignSelf: 'center' }} />
 
-			<Text style={[StyleGuide.semibold24, { marginTop: 56, marginBottom: 8 }]}>Entrar no Seleto</Text>
+			<Text style={[StyleGuide.semibold24, { marginTop: 56, marginBottom: 8 }]}>Login</Text>
 
-			<Text style={[StyleGuide.regular16, { color: colors.gray2, maxWidth: 240, marginBottom: 80 }]}>O seleto é um app exclusivo para clientes da KMM.</Text>
+			<TextInput mode="flat" underlineColor="#F1F1F1" theme={inputTheme} style={StyleGuide.input} returnKeyType="next" onSubmitEditing={() => refSenha.current.focus()} blurOnSubmit={false} label="Email" onChangeText={setEmail} value={email} keyboardType='email-address' autoCapitalize='none' autoCorrect={false} />
 
-			<TextInput mode="flat" underlineColor="#F1F1F1" theme={inputTheme} style={StyleGuide.input} returnKeyType="next"
-				onSubmitEditing={() => refSenha.current.focus()} blurOnSubmit={false} label="Email" onChangeText={setEmail} value={email}
-				keyboardType='email-address' autoCapitalize='none' autoCorrect={false} />
+			<TextInput mode="flat" underlineColor="#F1F1F1" theme={inputTheme} style={[StyleGuide.input, { marginTop: 30, marginBottom: 40 }]} ref={refSenha} blurOnSubmit={false} secureTextEntry={verSenha ? false : true} right={<TextInput.Icon style={{ zIndex: 10 }} onPress={() => setVerSenha(!verSenha)} color={colors.gray3} name={verSenha ? 'eye' : 'eye-off'} />} returnKeyType="done" label="Senha" autoCapitalize='none' autoCorrect={false} onChangeText={setPassword} value={password} onSubmitEditing={doLogin} />
 
-			<TextInput mode="flat" underlineColor="#F1F1F1" theme={inputTheme} style={[StyleGuide.input, { marginTop: 30, marginBottom: 40 }]}
-				ref={refSenha} blurOnSubmit={false} secureTextEntry={verSenha ? false : true} right={<TextInput.Icon style={{ zIndex: 10 }}
-					onPress={() => setVerSenha(!verSenha)} color={colors.gray3} name={verSenha ? 'eye' : 'eye-off'} />}
-				returnKeyType="done" label="Senha" autoCapitalize='none' autoCorrect={false} onChangeText={setPassword} value={password}
-				onSubmitEditing={doLogin} />
-
-			<Button onPress={doLogin} loading={isFetching} disabled={isFetching} disabledStyle={{ backgroundColor: '#26D37F' }}
-				containerStyle={buttonContainer.containerButton} buttonStyle={buttonContainer.button} titleStyle={StyleGuide.body14Bold}
-				title="Entrar" mode="contained" />
-
-			<Text style={StyleGuide.regular16, { color: colors.gray2, alignSelf: 'center', marginTop: 16 }} onPress={openUrl}>Esqueceu a senha?</Text>
+			<Button onPress={doLogin} loading={isFetching} disabled={isFetching} disabledStyle={{ backgroundColor: '#26D37F' }} containerStyle={buttonContainer.containerButton} buttonStyle={buttonContainer.button} titleStyle={StyleGuide.body14Bold} title="Entrar" mode="contained" />
 		</KeyboardAwareScrollView>
 	);
 }

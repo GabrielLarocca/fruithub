@@ -2,7 +2,6 @@
 import React from 'react';
 import { ScrollView, Text, StyleSheet } from 'react-native';
 import { Divider } from 'react-native-elements';
-import Header from '../../components/Header';
 import StyleGuide, { Default, colors } from '../../../assets/styles/StyleGuide';
 
 export default function Perguntas(props) {
@@ -11,10 +10,6 @@ export default function Perguntas(props) {
 			<Header arrowBack title="Perguntas frequentes" />
 
 			<ScrollView showsVerticalScrollIndicator={false} style={Default.container}>
-				<Text style={styles.titulo}>O que posso fazer no aplicativo?</Text>
-				<Text style={styles.texto}>No aplicativo você pode ver suas métricas, indicadores, participar de pesquisas, conferir resultados e ficar por dentro das notícias principais do que está acontecendo por aqui.</Text>
-				<Divider />
-
 				<Text style={styles.titulo}>Existe algum custo para fazer a minha conta no aplicativo?</Text>
 				<Text style={styles.texto}>Não, não existe nenhuma taxa para fazer a conta no aplicativo, seu registro é totalmente gratuito.</Text>
 				<Divider />

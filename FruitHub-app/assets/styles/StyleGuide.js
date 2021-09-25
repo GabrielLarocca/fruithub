@@ -55,6 +55,12 @@ export default StyleSheet.create({
         fontWeight: '500',
         fontFamily: 'Inter5',
     },
+    regular12: {
+        fontSize: 12,
+        lineHeight: 15,
+        fontWeight: '400',
+        fontFamily: 'Inter4',
+    },
     regular10: {
         fontSize: 10,
         lineHeight: 12,

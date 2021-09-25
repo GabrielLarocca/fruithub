@@ -13,6 +13,7 @@ import AuthLoadingScreen from '../screens/auth/AuthLoading';
 import Perguntas from '../screens/settings/Perguntas';
 import Perfil from '../screens/settings/Perfil';
 import EditarPerfil from '../screens/settings/EditarPerfil';
+import Product from '../screens/home/Product';
 
 const MainStack = createStackNavigator();
 const AuthStack = createStackNavigator();
@@ -38,6 +39,7 @@ export default function Navigator() {
 		return (
 			<HomeStack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
 				<HomeStack.Screen name="Home" component={Home} />
+				<HomeStack.Screen name="Product" component={Product} />
 			</HomeStack.Navigator>
 		);
 	};
