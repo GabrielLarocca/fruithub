@@ -1,0 +1,56 @@
+
+.icon-margin {
+    margin-right: 10px;
+}
+
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+}
+
+.btn-app-color {
+    border-color: #6A1B9A;
+    background-color: white;
+    color: #6A1B9A;
+}
+
+.btn-app-color:hover {
+    border-color: #6A1B9A;
+    background-color: #6A1B9A;
+    color: white;
+}
+
+.login-box-body {
+    border-radius: 25px;
+}
+
+.input-login {
+    border-radius: 10px;
+    height: 45px;
+}
+
+.form-control-feedback.fa {
+    line-height: 45px;
+    margin-right: 10px;
+}
+
+.icon-margin {
+    margin-right: 10px;
+}
+
+.btn-login {
+    font-size: 16px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.forgot-password-link {
+    color: #6A1B9A;
+}
+
+.login-page {
+    background-color: #e6eaf5;
+}
+
+.inputPointer {
+    cursor: pointer;
+}
